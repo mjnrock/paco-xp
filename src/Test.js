@@ -7,7 +7,10 @@ export default class Test extends Lux.React.ReactorComponent {
     render() {        
         return (
             <View style={ styles.container }>
-                <Text>{ JSON.stringify(this.context.$()) }</Text>
+                <Text style={{
+                    fontSize: "18pt",
+                    fontWeight: "bold"
+                }}>{ JSON.stringify(this.context.$()) }</Text>
             </View>
         );
     }
