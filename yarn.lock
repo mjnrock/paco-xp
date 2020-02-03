@@ -1152,13 +1152,14 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
-"@lespantsfancy/lux@^0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@lespantsfancy/lux/-/lux-0.2.3.tgz#1167e8243a9accace26b68cf82fd9b806c0480fa"
-  integrity sha512-scdAYPtNW9uta9Zd2V7sU3Im7p4Ve8EHl92VFsX9lMIWG2HlSkf5mUnRhZu6iIMi5y/MLaQqYt0cK1xvNjCszg==
+"@lespantsfancy/lux@^0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@lespantsfancy/lux/-/lux-0.2.5.tgz#6038cb8a3f377ea713b36fcff4d95d1855445a44"
+  integrity sha512-RPM3owp3W+7aHinMjbeTqveCIIqn45UsPnW6mCD3MrFhE5LlV5QYFWbkf9ud7dBPpaL0DtYiW4ILrFz2VdFiPQ==
   dependencies:
     node-fetch "^2.6.0"
     peerjs "^1.2.0"
+    react "^16.12.0"
     ws "^7.2.1"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
@@ -9909,6 +9910,15 @@ react-timer-mixin@^0.13.4:
   version "0.13.4"
   resolved "https://registry.yarnpkg.com/react-timer-mixin/-/react-timer-mixin-0.13.4.tgz#75a00c3c94c13abe29b43d63b4c65a88fc8264d3"
   integrity sha512-4+ow23tp/Tv7hBM5Az5/Be/eKKF7DIvJ09voz5LyHGQaqqz9WV8YMs31eFvcYQs7d451LSg7kDJV70XYN/Ug/Q==
+
+react@^16.12.0:
+  version "16.12.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.12.0.tgz#0c0a9c6a142429e3614834d5a778e18aa78a0b83"
+  integrity sha512-fglqy3k5E+81pA8s+7K0/T3DBCF0ZDOher1elBFzF7O6arXJgzyu/FW+COxFvAWXJoJN9KIZbT2LXlukwphYTA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
 
 react@~16.9.0:
   version "16.9.0"
