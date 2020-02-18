@@ -31,15 +31,7 @@ export default class ExperienceAttribute extends Lux.Node.Struct {
             }
         });
 
-        this.subscribe(e => {
-            if(e.getType() === "change") {
-                let { prop } = e.getPayload();
-
-                if(prop[ 0 ] === "Experience") {
-                    this.LevelUp();
-                }
-            }
-        });
+        this.watch("Experience", this.LevelUp.bind(this));
     }
 
     LevelUp() {
@@ -49,7 +41,7 @@ export default class ExperienceAttribute extends Lux.Node.Struct {
             if(this.Max < Math.MAX_SAFE_INTEGER) {
                 this.Max += this.Meta.GainsPerLevel.Max;
             }
-            
+
             this.Min += this.Meta.GainsPerLevel.Min;
             this.Value += this.Meta.GainsPerLevel.Value;
             

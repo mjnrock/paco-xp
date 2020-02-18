@@ -8,15 +8,17 @@ const Test = new Component.ExperienceAttribute("Strength");
 
 export default class App extends Lux.React.ObserverComponent {
     componentDidMount() {
-        console.log(Test._state);
+        console.time();
+            console.log(Test._state);
 
-        console.log(Test.Level, Test.Experience);
-        console.log(Test.Value, Test.Min, Test.Max);
+            console.log(Test.Level, Test.Experience);
+            console.log(Test.Value, Test.Min, Test.Max);
 
-        Test.Experience += 100000;
-        
-        console.log(Test.Level, Test.Experience);
-        console.log(Test.Value, Test.Min, Test.Max);
+            Test.Experience += 100000;
+            
+            console.log(Test.Level, Test.Experience);
+            console.log(Test.Value, Test.Min, Test.Max);
+        console.timeEnd();
     }
 
     render() {
