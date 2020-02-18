@@ -1,26 +1,23 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-
 import Lux from "@lespantsfancy/lux";
 
-import Test from "./Test";
+import Component from "./component/package";
 
-export default class App extends Lux.React.ReactorComponent {
-    componentWillMount() {
-        this.context.attach("Tester", new Lux.Node.Node());
-        this.context.getEntity("Tester").prop("cats", 15);
+const Test = new Component.Attribute();
 
-        setTimeout(() => {
-            this.context.getEntity("Tester").prop("cats", 25);
-            console.log(this.context.$());
-        }, 1500);
+export default class App extends Lux.React.ObserverComponent {
+    componentDidMount() {
+        Test.Strength += 5;
+        Test.Strength -= 15;
     }
 
-    render() {        
+    render() {  
+        console.log(Test);
+
         return (
             <View style={ styles.container }>
                 <Text>Open up App.js to start working on your app!</Text>
-                <Test />
             </View>
         );
     }
