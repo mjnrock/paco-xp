@@ -4,17 +4,22 @@ import Lux from "@lespantsfancy/lux";
 
 import Component from "./component/package";
 
-const Test = new Component.Attribute();
+const Test = new Component.ExperienceAttribute("Strength");
 
 export default class App extends Lux.React.ObserverComponent {
     componentDidMount() {
-        Test.Strength += 5;
-        Test.Strength -= 15;
+        console.log(Test._state);
+
+        console.log(Test.Level, Test.Experience);
+        console.log(Test.Value, Test.Min, Test.Max);
+
+        Test.Experience += 100000;
+        
+        console.log(Test.Level, Test.Experience);
+        console.log(Test.Value, Test.Min, Test.Max);
     }
 
-    render() {  
-        console.log(Test);
-
+    render() {
         return (
             <View style={ styles.container }>
                 <Text>Open up App.js to start working on your app!</Text>
