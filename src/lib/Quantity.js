@@ -1,10 +1,8 @@
 import Lux from "@lespantsfancy/lux";
 
 export default class Quantity extends Lux.Node.Struct {
-    constructor(value, { name = null } = {}) {
-        super({
-            Name: name,
-            
+    constructor(value) {
+        super({            
             Value: value
         }, {
             validators: {

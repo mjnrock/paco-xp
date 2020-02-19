@@ -5,6 +5,8 @@ import Component from "./../component/package";
 import Entity from "./Entity";
 
 export default class Raccoon extends Entity {
+    static Type = Enum.Entity.RACCOON;
+
     constructor(components = [], { name = null, attributes = {}, energy = {} } = {}) {
         super(
             Enum.Entity.RACCOON,

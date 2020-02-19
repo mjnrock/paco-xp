@@ -1,9 +1,12 @@
 import React from "react";
 import ReactDom from "react-dom";
-import App from "./App";
 import Lux from "@lespantsfancy/lux";
 
-Lux.React.Context.Observer.setSubject(new Lux.Node.Struct());
+import App from "./App";
+
+Lux.React.Context.Observer.setSubject(new Lux.Node.Struct({
+    fish: 1
+}));
 
 ReactDom.render(
 	<App />,

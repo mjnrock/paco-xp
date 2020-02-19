@@ -1,50 +1,24 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
 import Lux from "@lespantsfancy/lux";
 
 import Paco from "./package";
 
-const Test = new Paco.Lib.ExperienceQuantity(0);
-const Entity = new Paco.Entity.Entity(Paco.Enum.Entity.GENERIC, [
-    new Paco.Component.Attributes(),
-    new Paco.Component.Energy(),
-    new Paco.Component.Resources(),
-]);
+const Raccoon = new Paco.Entity.Raccoon();
+
+// console.log(Raccoon.$(Paco.Enum.Component.ATTRIBUTES).Strength.Value);
+console.log(Raccoon.$("Attributes"));
+console.log(Raccoon.$("Attributes").GetName());
+console.log(Raccoon.$("Attributes").GetType());
+console.log(Raccoon);
+console.log(Raccoon.GetType());
+console.log(Object.getPrototypeOf(Raccoon));
 
 export default class App extends Lux.React.ObserverComponent {
-    componentDidMount() {
-        console.time();
-            console.log(Test._state);
-
-            console.log(Test.Level, Test.Experience);
-            console.log(Test.Value, Test.Min, Test.Max);
-
-            Test.Experience += 100000;
-            
-            console.log(Test.Level, Test.Experience);
-            console.log(Test.Value, Test.Min, Test.Max);
-        console.timeEnd();
-
-        console.log(Entity);
-        console.log(Entity.Components);
-        console.log(Entity.Components[ 0 ].Strength);
-        console.log(Entity.Components[ 0 ].type);
-    }
-
     render() {
         return (
-            <View style={ styles.container }>
-                <Text>Open up App.js to start working on your app!</Text>
-            </View>
+            <div>
+                <pre className="b">{ Lux.Core.Helper.StringifyCyclic(Raccoon.$("Attributes"), 2) }</pre>
+            </div>
         );
     }
 };
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#fff",
-        alignItems: "center",
-        justifyContent: "center",
-    },
-});
