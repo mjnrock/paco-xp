@@ -1,16 +1,16 @@
 import Lux from "@lespantsfancy/lux";
 
-export default class ExperienceAttribute extends Lux.Node.Struct {
-    constructor(name) {
+export default class ExperienceQuantity extends Lux.Node.Struct {
+    constructor(value, { level = 1, experience = 0, min = null, max = null, name = null } = {}) {
         super({
             Name: name,
 
-            Value: 0,
-            Min: 0,
-            Max: Number.MAX_SAFE_INTEGER,
+            Value: value,
+            Min: min,
+            Max: max === void 0 ? Number.MAX_SAFE_INTEGER : max,
 
-            Level: 1,
-            Experience: 0,
+            Level: level,
+            Experience: experience,
 
             Meta: {
                 RequiredXP: level => level * (level + 1) * 500,

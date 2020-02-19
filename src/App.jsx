@@ -2,9 +2,14 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Lux from "@lespantsfancy/lux";
 
-import Component from "./component/package";
+import Paco from "./package";
 
-const Test = new Component.ExperienceAttribute("Strength");
+const Test = new Paco.Lib.ExperienceQuantity(0);
+const Entity = new Paco.Entity.Entity(Paco.Enum.Entity.GENERIC, [
+    new Paco.Component.Attributes(),
+    new Paco.Component.Energy(),
+    new Paco.Component.Resources(),
+]);
 
 export default class App extends Lux.React.ObserverComponent {
     componentDidMount() {
@@ -19,6 +24,11 @@ export default class App extends Lux.React.ObserverComponent {
             console.log(Test.Level, Test.Experience);
             console.log(Test.Value, Test.Min, Test.Max);
         console.timeEnd();
+
+        console.log(Entity);
+        console.log(Entity.Components);
+        console.log(Entity.Components[ 0 ].Strength);
+        console.log(Entity.Components[ 0 ].type);
     }
 
     render() {

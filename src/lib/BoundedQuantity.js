@@ -1,13 +1,13 @@
 import Lux from "@lespantsfancy/lux";
 
-export default class BoundedAttribute extends Lux.Node.Struct {
-    constructor(name) {
+export default class BoundedQuantity extends Lux.Node.Struct {
+    constructor(value, { min = null, max = null, name = null } = {}) {
         super({
             Name: name,
-            
-            Value: 0,
-            Min: 0,
-            Max: Number.MAX_SAFE_INTEGER
+
+            Value: value,
+            Min: min,
+            Max: max === void 0 ? Number.MAX_SAFE_INTEGER : max
         }, {
             validators: {
                 Value: Lux.Core.Enum.RegEx.INTEGER,

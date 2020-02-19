@@ -1,11 +1,11 @@
 import Lux from "@lespantsfancy/lux";
 
-export default class Attribute extends Lux.Node.Struct {
-    constructor(name) {
+export default class Quantity extends Lux.Node.Struct {
+    constructor(value, { name = null } = {}) {
         super({
             Name: name,
             
-            Value: 0
+            Value: value
         }, {
             validators: {
                 Value: Lux.Core.Enum.RegEx.INTEGER
