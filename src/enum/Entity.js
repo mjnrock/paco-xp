@@ -1,3 +1,4 @@
 export default {
-    GENERIC: 0
+    GENERIC: 0,
+    RACCOON: 1,
 };

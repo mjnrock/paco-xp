@@ -4,7 +4,7 @@ import Enum from "../enum/package";
 import BoundedQuantity from "../lib/BoundedQuantity";
 
 export default class Location extends Lux.Node.Struct {
-    constructor(map, x, y) {
+    constructor({ map = null, x = 0, y = 0 } = {}) {
         super({
             Map: map,
             X: new BoundedQuantity(x, 0),
