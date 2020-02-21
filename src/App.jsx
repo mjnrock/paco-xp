@@ -1,7 +1,7 @@
 import React from "react";
 import Lux from "@lespantsfancy/lux";
 
-import Paco from "./package";
+import Paco from "./core/package";
 
 const Raccoon = new Paco.Entity.Raccoon();
 
