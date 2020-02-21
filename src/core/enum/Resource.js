@@ -1,10 +1,11 @@
+
 import Enum from "./Enum";
 
 export default class Component extends Enum {
     constructor() {
         super({
-            GENERIC: 0,
-            RACCOON: 1,
+            WOOD: 0,
+            FOOD: 1
         });
     }
 };

@@ -16,5 +16,14 @@ export default class BoundedQuantity extends Lux.Node.Struct {
                 Value: attr => Lux.Core.Helper.Clamp(attr, this.Min, this.Max)
             }
         });
+
+        this.Test = {
+            NewValue: newValue => newValue >= this.Min && newValue <= this.Max,
+            AddAmount: amount => {
+                let newValue = this.Value + amount;
+        
+                return newValue >= this.Min && newValue <= this.Max;
+            }
+        }
     }
 };
