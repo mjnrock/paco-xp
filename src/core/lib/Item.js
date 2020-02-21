@@ -9,33 +9,33 @@ export default class Item extends Lux.Node.Struct {
 
             Name: name,
             Quantity: new BoundedQuantity(qty, { min = 0 }),
-            Components: components,
-
-            onActivate: null,
-
-            onIncrement: null,
-            onDecrement: null,
-            onZero: null,
+            Components: components
         });
 
         this.watch("Quantity", e => {
             let { current, previous } = e.getPayload();
 
-            if(current > previous && typeof this.onIncrement === "function") {
-                this.onIncrement(this);
-            } else if(current < previous && typeof this.onDecrement === "function") {
-                this.onDecrement(this);
-            } else if(current === 0 && typeof this.onZero === "function") {
-                this.onZero(this);
+            if(current > previous) {
+                this.trigger("increment", this.Quantity);
+            } else if(current < previous) {
+                this.trigger("decrement", this.Quantity);
+            } else if(current === 0) {
+                this.trigger("zero");
             }
         });
     }
 
-    Use() {
-        if(typeof this.onActivate === "function") {
-            this.onActivate(this);
+    Use(amount = 1) {
+        for(let i = 0; i < amount; i++) {
+            if(this.Quantity > 0) {
+                this.Quantity -= 1;
+
+                this.trigger("activate", [ this.Quantity, this.Components ]);
+            } else {
+                return this;
+            }
         }
 
-        this.Quantity -= 1;
+        return this;
     }
 };
