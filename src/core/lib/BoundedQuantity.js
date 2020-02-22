@@ -24,6 +24,6 @@ export default class BoundedQuantity extends Lux.Node.Struct {
         
                 return newValue >= this.Min && newValue <= this.Max;
             }
-        }
+        };
     }
 };

@@ -16,6 +16,10 @@ export default class Enum {
         });
     }
 
+    hasValue(value) {
+        return Object.values(this._state).includes(value);
+    }
+
     getKey(value) {
         Object.entries(this._state).forEach(v => {
             let [ key, val ] = v;
