@@ -1,9 +1,9 @@
 import Lux from "@lespantsfancy/lux";
 
-export default class Loop extends Lux.Core.Struct {
+export default class Loop extends Lux.Node.Struct {
     constructor(fps = 24) {
         super({
-            Tick: 0,
+            Ticks: 0,
             LastTime: null,
 
             FPS: fps,
@@ -14,7 +14,7 @@ export default class Loop extends Lux.Core.Struct {
     }
 
     Start() {
-        this.Timer = setInterval(this.Tick, this.SPF);
+        this.Timer = setInterval(() => this.Tick(), this.SPF);
 
         return this;
     }
@@ -31,6 +31,6 @@ export default class Loop extends Lux.Core.Struct {
         this.trigger("tick", delta);
 
         this.LastTime = now;
-        this.Tick += 1;
+        this.Ticks += 1;
     }
 };

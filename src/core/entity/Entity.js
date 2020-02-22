@@ -6,7 +6,7 @@ import Enum from "./../enum/package";
 export default class Entity extends Lux.Node.Struct {
     static Type = Enum.Entity.GENERIC;
 
-    constructor(type, components = [], { name = null } = {}) {
+    constructor(components = [], { name = null } = {}) {
         super({
             Name: name,
             Components: components,
@@ -36,4 +36,6 @@ export default class Entity extends Lux.Node.Struct {
     GetType() {
         return Object.getPrototypeOf(this).constructor.Type;
     }
+
+    Tick(delta) {}
 };
