@@ -1,6 +1,6 @@
 import Lux from "@lespantsfancy/lux";
 
-import BoundedQuantity from "./BoundedQuantity";
+import BoundedQuantity from "../../lib/BoundedQuantity";
 
 export default class Item extends Lux.Node.Struct {
     constructor(type, { components = [], qty = 1, name = null } = {}) {
